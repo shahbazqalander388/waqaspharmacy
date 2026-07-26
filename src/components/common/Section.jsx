@@ -6,17 +6,10 @@ const Section = ({
   className = '', 
   title = '', 
   subtitle = '',
-  bg = 'white'
 }) => {
-  const bgColors = {
-    white: 'bg-white',
-    gray: 'bg-gray-50',
-    primary: 'bg-primary-50',
-  };
-
   return (
-    <section id={id} className={`py-20 md:py-24 ${bgColors[bg] || bgColors.white} ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id={id} className={`py-20 md:py-24 relative ${className}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {(title || subtitle) && (
           <div className="text-center max-w-3xl mx-auto mb-16">
             {subtitle && (
@@ -25,7 +18,7 @@ const Section = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="text-primary-600 font-semibold tracking-wider uppercase text-sm block mb-3"
+                className="text-green-300 font-bold tracking-wider uppercase text-sm block mb-3 drop-shadow-sm"
               >
                 {subtitle}
               </motion.span>
@@ -36,7 +29,7 @@ const Section = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900"
+                className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-sm"
               >
                 {title}
               </motion.h2>

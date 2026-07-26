@@ -31,16 +31,7 @@ const Home = () => {
     <div id="home">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=2070" 
-            alt="Pharmacy background" 
-            className="w-full h-full object-cover object-center opacity-10"
-            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/2000x1000/16a34a/ffffff?text=Waqas+Pharmacy" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
-        </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
             <motion.div
@@ -51,10 +42,10 @@ const Home = () => {
               <span className="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-6 tracking-wide uppercase">
                 Established 2007
               </span>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
-                Your Trusted <span className="text-primary-600">Healthcare</span> Partner
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                Your Trusted <span className="text-green-400">Healthcare</span> Partner
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
+              <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-lg">
                 Providing genuine medicines, professional advice, and comprehensive healthcare solutions for you and your family.
               </p>
               

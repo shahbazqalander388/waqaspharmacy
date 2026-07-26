@@ -33,6 +33,14 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply antialiased text-gray-800 bg-gray-50 font-sans;
+    @apply antialiased text-gray-100 bg-gradient-to-r from-[#0B1F33] via-[#0C2A28] to-[#0B3A22] bg-fixed font-sans min-h-screen;
+  }
+
+  main h1, main h2, main h3, main h4, main h5, main h6 {
+    @apply text-white font-bold;
+  }
+
+  main a:not([class*="bg-"]) {
+    @apply text-green-400 hover:text-green-300 font-bold underline decoration-2 decoration-green-400/50 hover:decoration-green-400 transition-all;
   }
 }

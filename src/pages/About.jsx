@@ -25,8 +25,9 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white/50"
         >
-          <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
+          <div className="space-y-4 text-gray-800 text-lg leading-relaxed font-medium">
             <p>
               Established in 2007, Waqas Pharmacy began with a simple mission: to provide the people of Peshawar with reliable, genuine medicines and exceptional customer care.
             </p>
@@ -38,14 +39,14 @@ const About = () => {
             </p>
           </div>
           
-          <div className="mt-8 grid grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="bg-white/90 p-6 rounded-2xl shadow-sm border border-white">
               <h3 className="text-xl font-bold text-primary-600 mb-2">Our Mission</h3>
-              <p className="text-gray-600 text-sm">To enhance the quality of life in our community through exceptional pharmacy services.</p>
+              <p className="text-gray-700 text-sm font-medium">To enhance the quality of life in our community through exceptional pharmacy services.</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white/90 p-6 rounded-2xl shadow-sm border border-white">
               <h3 className="text-xl font-bold text-primary-600 mb-2">Our Vision</h3>
-              <p className="text-gray-600 text-sm">To be the first choice for healthcare and wellness in Peshawar.</p>
+              <p className="text-gray-700 text-sm font-medium">To be the first choice for healthcare and wellness in Peshawar.</p>
             </div>
           </div>
         </motion.div>
