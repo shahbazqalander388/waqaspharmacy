@@ -33,7 +33,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply antialiased text-white bg-emerald-600 bg-fixed font-sans min-h-screen;
+    @apply antialiased text-white bg-gradient-to-br from-pink-500 via-fuchsia-600 to-purple-700 bg-fixed font-sans min-h-screen;
   }
 
   main h1, main h2, main h3, main h4, main h5, main h6 {
@@ -42,5 +42,26 @@
 
   main a:not([class*="bg-"]) {
     @apply text-yellow-300 hover:text-yellow-100 font-bold underline decoration-2 decoration-yellow-300/50 hover:decoration-yellow-300 transition-all;
+  }
+}
+
+@layer utilities {
+  .capsule-float-slow {
+    animation: capsuleFloat 8s ease-in-out infinite;
+  }
+  .capsule-float-medium {
+    animation: capsuleFloat 6s ease-in-out infinite;
+  }
+  .capsule-float-fast {
+    animation: capsuleFloat 4s ease-in-out infinite;
+  }
+}
+
+@keyframes capsuleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
