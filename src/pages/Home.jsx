@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import Section from '../components/common/Section';
 import AnimatedCounter from '../components/common/AnimatedCounter';
-import TestimonialSlider from '../components/common/TestimonialSlider';
 
 const Home = () => {
   const stats = [
@@ -11,11 +10,6 @@ const Home = () => {
     { value: 99, label: 'Satisfaction', suffix: '%' },
   ];
 
-  const testimonials = [
-    { text: "Best pharmacy in Peshawar! The staff is incredibly helpful and they always have the genuine medicines I need.", name: "Ahmed Khan", role: "Regular Customer" },
-    { text: "I trust Waqas Pharmacy for all my family's healthcare needs. Their service since 2007 has been consistently excellent.", name: "Sara Ali", role: "Local Resident" },
-    { text: "Very professional environment and knowledgeable pharmacists. Highly recommended!", name: "Dr. Bilal", role: "Healthcare Professional" }
-  ];
 
   const handleScroll = (id) => {
     const element = document.getElementById(id);
@@ -71,10 +65,6 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Testimonials */}
-      <Section bg="white" title="What Our Customers Say" subtitle="Testimonials">
-        <TestimonialSlider testimonials={testimonials} />
-      </Section>
     </div>
   );
 };
