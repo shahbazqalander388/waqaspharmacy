@@ -18,13 +18,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="bg-primary-500 text-white p-2 rounded-lg flex items-center justify-center w-10 h-10">
-                <span className="font-bold text-2xl leading-none">W</span>
-              </div>
-              <div>
-                <span className="font-bold text-xl text-white block leading-tight">Waqas</span>
-                <span className="text-xs text-primary-400 font-bold block leading-tight tracking-widest uppercase">Pharmacy</span>
-              </div>
+              <img src="/logo.jpg" alt="Waqas Pharmacy Logo" className="h-24 md:h-28 w-auto object-contain rounded-2xl shadow-lg border border-white/20 bg-white" />
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Trusted Healthcare Since 2007. Providing genuine medicines and professional customer service to our community.

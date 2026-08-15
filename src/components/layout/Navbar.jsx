@@ -67,13 +67,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center gap-2 relative z-50">
-            <div className="bg-primary-600 text-white p-2 rounded-lg flex items-center justify-center w-10 h-10 shadow-sm">
-              <span className="font-bold text-2xl leading-none">W</span>
-            </div>
-            <div className="text-left">
-              <span className="font-bold text-xl text-primary-900 block leading-tight">Waqas</span>
-              <span className="text-xs text-secondary-600 font-bold block leading-tight tracking-widest uppercase">Pharmacy</span>
-            </div>
+            <img src="/logo.jpg" alt="Waqas Pharmacy Logo" className="h-20 md:h-24 w-auto object-contain mix-blend-multiply -ml-2" />
           </a>
 
           {/* Desktop Menu */}
