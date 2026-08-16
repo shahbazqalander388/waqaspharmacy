@@ -21,8 +21,8 @@ const WhyChooseUs = () => {
     },
     { 
       icon: <FaTags />, 
-      title: "Fair & Regulated Prices", 
-      desc: "Honest government-compliant pricing and accessible rates across all life-saving medications and daily wellness items." 
+      title: "Regulated Genuine Rates", 
+      desc: "Honest government-compliant pharmaceutical pricing and accessible rates across all life-saving medications and daily wellness items." 
     },
     { 
       icon: <FaSmile />, 
@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
 
   return (
     <Section 
-      id="why-choose-us" 
+      id="why-us" 
       title="Why Choose Waqas Pharmacy" 
       subtitle="The Trusted Difference"
       description="We prioritize patient safety, authenticity, and clinical care above all else."

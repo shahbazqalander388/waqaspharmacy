@@ -1,45 +1,65 @@
-import Navbar from './components/layout/Navbar';
+import React from 'react';
+import TopBar from './components/layout/TopBar';
+import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import FloatingButtons from './components/common/FloatingButtons';
-import SEO from './components/common/SEO';
-import Home from './pages/Home';
-import About from './pages/About';
+import HeroSlider from './components/home/HeroSlider';
+import TrustBadges from './components/home/TrustBadges';
+import CategoryShowcase from './components/home/CategoryShowcase';
+import PrescriptionBanner from './components/home/PrescriptionBanner';
 import Services from './pages/Services';
-import Categories from './pages/Categories';
 import WhyChooseUs from './pages/WhyChooseUs';
-import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import FloatingWhatsApp from './components/common/FloatingWhatsApp';
+import SEO from './components/common/SEO';
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#F8FAFC] text-[#0F172A]">
-      {/* Elegant ambient healthcare background glow effects */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#ECFEFF] opacity-70 blur-3xl"></div>
-        <div className="absolute top-1/3 -left-32 w-80 h-80 rounded-full bg-teal-100/40 opacity-60 blur-3xl"></div>
-        <div className="absolute top-2/3 -right-20 w-96 h-96 rounded-full bg-blue-100/30 opacity-50 blur-3xl"></div>
-        <div className="absolute bottom-10 left-1/4 w-72 h-72 rounded-full bg-[#ECFEFF] opacity-60 blur-3xl"></div>
-      </div>
-
+    <div className="flex flex-col min-h-screen bg-white text-[#0F172A] selection:bg-red-100 selection:text-red-900">
+      
+      {/* Dynamic SEO Meta */}
       <SEO 
-        title="Waqas Pharmacy | Trusted Healthcare Since 2007" 
-        description="Premium modern pharmacy located in Peshawar. Genuine medicines, healthcare products, and trusted pharmacist advice since 2007."
+        title="Waqas Pharmacy | 100% Genuine Certified Healthcare & Medicines Peshawar" 
+        description="Peshawar's trusted pharmacy & healthcare superstore since 2007. 100% genuine certified medicines, vitamins, baby care, and medical devices with direct WhatsApp ordering."
       />
-      
-      <Navbar />
-      
-      <main className="flex-grow relative z-10">
-        <Home />
-        <About />
+
+      {/* 1. Top Announcement Bar */}
+      <TopBar />
+
+      {/* 2. Main Sticky Header (No Search Bar, Clean Navigation & WhatsApp CTA) */}
+      <Header />
+
+      {/* Main Content Area */}
+      <main className="flex-grow">
+        
+        {/* 3. Hero Carousel (No Prices) */}
+        <HeroSlider />
+
+        {/* 4. 4 Trust Badges */}
+        <TrustBadges />
+
+        {/* 5. Medicine Categories Showcase (No Prices - Direct WhatsApp Inquiries) */}
+        <CategoryShowcase />
+
+        {/* 6. Dedicated Prescription Order Banner */}
+        <PrescriptionBanner />
+
+        {/* 7. Comprehensive Healthcare Services */}
         <Services />
-        <Categories />
+
+        {/* 8. Why Choose Waqas Pharmacy */}
         <WhyChooseUs />
-        <FAQ />
+
+        {/* 9. Contact, Store Timings, Location Map & WhatsApp Desk */}
         <Contact />
+
       </main>
-      
+
+      {/* 10. Clean Professional Footer */}
       <Footer />
-      <FloatingButtons />
+
+      {/* 11. Floating WhatsApp Button */}
+      <FloatingWhatsApp />
+
     </div>
   );
 }
