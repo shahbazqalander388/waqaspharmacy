@@ -108,9 +108,20 @@ const Home = () => {
                 
                 {/* Main Hero Card */}
                 <div className="relative bg-white rounded-3xl border border-slate-200/80 p-4 sm:p-5 shadow-xl">
+                  {/* Floating Experience Badge at Top-Left */}
+                  <div className="absolute -top-5 -left-3 sm:-left-6 z-20 bg-white/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-3">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#0F766E] text-white font-extrabold flex items-center justify-center text-base sm:text-lg shadow-xs">
+                      16+
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-[#64748B] uppercase tracking-wider">Trusted</div>
+                      <div className="text-xs sm:text-sm font-extrabold text-[#0F172A]">Years of Service</div>
+                    </div>
+                  </div>
+
                   <div className="rounded-2xl overflow-hidden relative aspect-[4/3] bg-slate-100 mb-4">
                     <img 
-                      src="https://images.unsplash.com/photo-1586015554060-8db6631248a1?auto=format&fit=crop&q=80&w=800" 
+                      src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=800" 
                       alt="Modern Pharmacy & Genuine Medicine Dispensing" 
                       className="w-full h-full object-cover object-center"
                       onError={(e) => { e.target.onerror = null; e.target.src = "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"; }}
@@ -122,38 +133,27 @@ const Home = () => {
                     </div>
                   </div>
 
-                  {/* Quick Feature Badges Inside Card */}
+                  {/* Quick Feature Badges Inside Card - Fully visible without any overlapping */}
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3.5 rounded-xl bg-[#ECFEFF] border border-teal-100 flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-[#0F766E] text-white flex items-center justify-center shrink-0">
-                        <FaCheckCircle className="text-lg" />
+                    <div className="p-3 sm:p-3.5 rounded-xl bg-[#ECFEFF] border border-teal-100 flex items-center gap-2.5 sm:gap-3">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#0F766E] text-white flex items-center justify-center shrink-0">
+                        <FaCheckCircle className="text-base sm:text-lg" />
                       </div>
-                      <div>
-                        <div className="text-xs text-[#64748B] font-medium">Authenticity</div>
-                        <div className="text-sm font-bold text-[#0F172A]">100% Genuine</div>
+                      <div className="min-w-0">
+                        <div className="text-[11px] text-[#64748B] font-medium truncate">Authenticity</div>
+                        <div className="text-xs sm:text-sm font-bold text-[#0F172A] truncate">100% Genuine</div>
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-[#EFF6FF] border border-blue-100 flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-[#2563EB] text-white flex items-center justify-center shrink-0">
-                        <FaClock className="text-lg" />
+                    <div className="p-3 sm:p-3.5 rounded-xl bg-[#EFF6FF] border border-blue-100 flex items-center gap-2.5 sm:gap-3">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#2563EB] text-white flex items-center justify-center shrink-0">
+                        <FaClock className="text-base sm:text-lg" />
                       </div>
-                      <div>
-                        <div className="text-xs text-[#64748B] font-medium">Daily Timings</div>
-                        <div className="text-sm font-bold text-[#0F172A]">7 AM - 12 AM</div>
+                      <div className="min-w-0">
+                        <div className="text-[11px] text-[#64748B] font-medium truncate">Daily Timings</div>
+                        <div className="text-xs sm:text-sm font-bold text-[#0F172A] truncate">7 AM - 12 AM</div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                {/* Floating Experience Badge */}
-                <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white p-3.5 sm:p-4 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#0F766E] text-white font-extrabold flex items-center justify-center text-lg shadow-sm">
-                    16+
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold text-[#64748B] uppercase tracking-wider">Trusted</div>
-                    <div className="text-sm font-extrabold text-[#0F172A]">Years of Service</div>
                   </div>
                 </div>
               </div>

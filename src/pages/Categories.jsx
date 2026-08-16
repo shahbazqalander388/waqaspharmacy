@@ -4,9 +4,9 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const Categories = () => {
   const categories = [
-    { title: "Prescription Medicines", badge: "Verified", image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ad?auto=format&fit=crop&q=80&w=600" },
+    { title: "Prescription Medicines", badge: "Verified", image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=600" },
     { title: "OTC Remedies", badge: "Fast Relief", image: "https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=600" },
-    { title: "Vitamins & Supplements", badge: "Wellness", image: "https://images.unsplash.com/photo-1577401239170-89895cea000b?auto=format&fit=crop&q=80&w=600" },
+    { title: "Vitamins & Supplements", badge: "Wellness", image: "https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=600" },
     { title: "Baby & Mother Care", badge: "Gentle Care", image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=600" },
     { title: "Personal Care", badge: "Hygiene", image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&q=80&w=600" },
     { title: "Health & Nutrition", badge: "Daily Life", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" },
@@ -39,7 +39,7 @@ const Categories = () => {
                 loading="lazy"
                 onError={(e) => { 
                   e.target.onerror = null; 
-                  e.target.src = `https://images.unsplash.com/photo-1584308666744-24d5c474f2ad?auto=format&fit=crop&q=80&w=600`; 
+                  e.target.src = `https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=600`; 
                 }}
               />
               {/* Gradient overlay for readability */}
