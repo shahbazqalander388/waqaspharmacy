@@ -159,7 +159,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-1.5">Message or Prescription Details</label>
+              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-1.5">Message or Medicine Details</label>
               <textarea 
                 id="message" 
                 rows="4" 

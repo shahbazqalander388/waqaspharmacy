@@ -56,6 +56,7 @@
   html {
     scroll-behavior: smooth;
     color-scheme: light;
+    overflow-x: clip;
   }
 
   body {
@@ -63,6 +64,7 @@
     color: #0F172A;
     font-family: var(--font-sans);
     min-height: 100vh;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

@@ -103,7 +103,7 @@ const Footer = () => {
             <ul className="space-y-2 text-xs font-semibold text-red-200">
               <li>
                 <a 
-                  href="#prescription" 
+                  href="#services" 
                   className="hover:text-amber-300 transition-colors"
                 >
                   Prescription Dispensing

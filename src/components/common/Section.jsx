@@ -9,7 +9,7 @@ const Section = ({
   description = '',
 }) => {
   return (
-    <section id={id} className={`py-16 md:py-24 relative ${className}`}>
+    <section id={id} className={`py-10 sm:py-16 md:py-20 relative ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {(title || subtitle || description) && (
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
