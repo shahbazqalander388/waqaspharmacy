@@ -1,8 +1,37 @@
+import { useState } from 'react';
 import Section from '../components/common/Section';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp, FaClock, FaPaperPlane } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Construct WhatsApp message text
+    let text = `*New Inquiry - Waqas Pharmacy*\n\n`;
+    if (formData.name.trim()) text += `👤 *Name:* ${formData.name.trim()}\n`;
+    if (formData.phone.trim()) text += `📞 *Phone:* ${formData.phone.trim()}\n`;
+    if (formData.email.trim()) text += `📧 *Email:* ${formData.email.trim()}\n`;
+    if (formData.message.trim()) {
+      text += `\n💬 *Message / Prescription Details:*\n${formData.message.trim()}`;
+    }
+
+    const whatsappUrl = `https://wa.me/923349238785?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <Section 
       id="contact" 
@@ -88,15 +117,18 @@ const Contact = () => {
           className="lg:col-span-7 bg-white rounded-3xl shadow-xs border border-slate-200/80 p-7 sm:p-9"
         >
           <h3 className="text-2xl font-extrabold text-[#0F172A] mb-2">Send us a Message</h3>
-          <p className="text-[#64748B] text-sm mb-6">Leave your query and our team will get back to you promptly.</p>
+          <p className="text-[#64748B] text-sm mb-6">Leave your query and chat directly with our pharmacist on WhatsApp.</p>
           
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-1.5">Your Name</label>
                 <input 
                   type="text" 
                   id="name" 
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8] focus:bg-white focus:ring-2 focus:ring-[#0F766E]/20 focus:border-[#0F766E] outline-none transition-all text-sm" 
                   placeholder="e.g. Ahmad Khan" 
                 />
@@ -106,6 +138,8 @@ const Contact = () => {
                 <input 
                   type="tel" 
                   id="phone" 
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8] focus:bg-white focus:ring-2 focus:ring-[#0F766E]/20 focus:border-[#0F766E] outline-none transition-all text-sm" 
                   placeholder="+92 300 1234567" 
                 />
@@ -113,10 +147,12 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-1.5">Email Address</label>
+              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-1.5">Email Address (Optional)</label>
               <input 
                 type="email" 
                 id="email" 
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8] focus:bg-white focus:ring-2 focus:ring-[#0F766E]/20 focus:border-[#0F766E] outline-none transition-all text-sm" 
                 placeholder="name@example.com" 
               />
@@ -127,6 +163,9 @@ const Contact = () => {
               <textarea 
                 id="message" 
                 rows="4" 
+                required
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8] focus:bg-white focus:ring-2 focus:ring-[#0F766E]/20 focus:border-[#0F766E] outline-none transition-all resize-none text-sm" 
                 placeholder="Describe your medicine requirements or questions..."
               ></textarea>
@@ -134,10 +173,10 @@ const Contact = () => {
 
             <button 
               type="submit" 
-              className="w-full inline-flex items-center justify-center gap-2 bg-[#0F766E] hover:bg-[#115E59] text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-teal-900/15 text-base cursor-pointer hover:-translate-y-0.5"
+              className="w-full inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-green-900/15 text-base cursor-pointer hover:-translate-y-0.5"
             >
-              <FaPaperPlane className="text-sm" />
-              <span>Send Message</span>
+              <FaWhatsapp className="text-xl" />
+              <span>Send via WhatsApp</span>
             </button>
           </form>
         </motion.div>
