@@ -6,7 +6,7 @@ import SEO from '../components/common/SEO';
 
 const MainLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <SEO 
         title="Waqas Pharmacy | Trusted Healthcare Since 2007" 
         description="Premium modern pharmacy located in Peshawar. Genuine medicines and trusted healthcare services since 2007."

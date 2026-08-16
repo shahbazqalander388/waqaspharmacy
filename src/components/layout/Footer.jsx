@@ -1,4 +1,4 @@
-import { FaFacebookF, FaWhatsapp, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebookF, FaWhatsapp, FaPhoneAlt, FaMapMarkerAlt, FaHeart } from 'react-icons/fa';
 
 const Footer = () => {
   const handleNavClick = (e, id) => {
@@ -13,71 +13,119 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-primary-500">
+    <footer className="bg-[#0F172A] text-white pt-16 pb-8 border-t-4 border-[#0F766E] relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          <div>
-            <div className="flex items-center gap-2 mb-6">
-              <img src="/logo.jpg" alt="Waqas Pharmacy Logo" className="h-24 md:h-28 w-auto object-contain rounded-2xl shadow-lg border border-white/20 bg-white" />
-            </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Trusted Healthcare Since 2007. Providing genuine medicines and professional customer service to our community.
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-12">
+          
+          {/* Col 1: Brand & Bio */}
+          <div className="lg:col-span-4 space-y-5">
+            <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="inline-block bg-white p-2.5 rounded-2xl">
+              <img 
+                src="/logo.jpg" 
+                alt="Waqas Pharmacy Logo" 
+                className="h-14 w-auto object-contain" 
+              />
+            </a>
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
+              Trusted healthcare in Peshawar since 2007. Providing guaranteed genuine medicines, qualified pharmacist consultation, and dedicated healthcare essentials.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://www.facebook.com/share/1BaLtPvjtm/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary-600 hover:text-white transition-colors">
+            <div className="flex space-x-3 pt-2">
+              <a 
+                href="https://www.facebook.com/share/1BaLtPvjtm/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Facebook" 
+                className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-[#2563EB] hover:text-white transition-colors"
+              >
                 <FaFacebookF />
               </a>
-              <a href="https://wa.me/923349238785" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-green-500 hover:text-white transition-colors">
+              <a 
+                href="https://wa.me/923349238785" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="WhatsApp" 
+                className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-[#0F766E] hover:text-white transition-colors"
+              >
                 <FaWhatsapp />
               </a>
             </div>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
-            <ul className="space-y-3">
-              <li><a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-gray-400 hover:text-primary-400 transition-colors">About Us</a></li>
-              <li><a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-gray-400 hover:text-primary-400 transition-colors">Our Services</a></li>
-              <li><a href="#categories" onClick={(e) => handleNavClick(e, 'categories')} className="text-gray-400 hover:text-primary-400 transition-colors">Medicine Categories</a></li>
-              <li><a href="#why-choose-us" onClick={(e) => handleNavClick(e, 'why-choose-us')} className="text-gray-400 hover:text-primary-400 transition-colors">Why Choose Us</a></li>
-              <li><a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="text-gray-400 hover:text-primary-400 transition-colors">FAQs</a></li>
+          {/* Col 2: Quick Links */}
+          <div className="lg:col-span-3">
+            <h4 className="text-base font-bold mb-5 text-white uppercase tracking-wider text-xs">Navigation</h4>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-slate-400 hover:text-[#ECFEFF] transition-colors">
+                  About Waqas Pharmacy
+                </a>
+              </li>
+              <li>
+                <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-slate-400 hover:text-[#ECFEFF] transition-colors">
+                  Healthcare Services
+                </a>
+              </li>
+              <li>
+                <a href="#categories" onClick={(e) => handleNavClick(e, 'categories')} className="text-slate-400 hover:text-[#ECFEFF] transition-colors">
+                  Medicine Categories
+                </a>
+              </li>
+              <li>
+                <a href="#why-choose-us" onClick={(e) => handleNavClick(e, 'why-choose-us')} className="text-slate-400 hover:text-[#ECFEFF] transition-colors">
+                  Why Choose Us
+                </a>
+              </li>
+              <li>
+                <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="text-slate-400 hover:text-[#ECFEFF] transition-colors">
+                  Frequently Asked Questions
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-slate-400 hover:text-[#ECFEFF] transition-colors">
+                  Contact & Location
+                </a>
+              </li>
             </ul>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Contact Info</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <FaMapMarkerAlt className="mt-1 mr-3 text-primary-500 shrink-0" />
-                <span className="text-gray-400">Dabgari Garden Chowk,<br/>Peshawar, Pakistan</span>
+          {/* Col 3: Contact Details */}
+          <div className="lg:col-span-3">
+            <h4 className="text-base font-bold mb-5 text-white uppercase tracking-wider text-xs">Contact Info</h4>
+            <ul className="space-y-3.5 text-sm">
+              <li className="flex items-start gap-3">
+                <FaMapMarkerAlt className="mt-1 text-[#2DD4BF] shrink-0" />
+                <span className="text-slate-400">Dabgari Garden Chowk,<br/>Peshawar, Pakistan</span>
               </li>
-              <li className="flex items-center">
-                <FaPhoneAlt className="mr-3 text-primary-500 shrink-0" />
-                <span className="text-gray-400">+92 334 9238785</span>
+              <li className="flex items-center gap-3">
+                <FaPhoneAlt className="text-[#2DD4BF] shrink-0" />
+                <a href="tel:+923349238785" className="text-slate-400 hover:text-white transition-colors">+92 334 9238785</a>
               </li>
-              <li className="flex items-center">
-                <FaWhatsapp className="mr-3 text-primary-500 text-lg shrink-0" />
-                <span className="text-gray-400">+92 334 9238785</span>
+              <li className="flex items-center gap-3">
+                <FaWhatsapp className="text-[#2DD4BF] shrink-0 text-base" />
+                <a href="https://wa.me/923349238785" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">+92 334 9238785</a>
               </li>
             </ul>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Opening Hours</h3>
-            <ul className="space-y-3">
-              <li className="flex flex-col text-gray-400 bg-gray-800 p-4 rounded-lg">
-                <span className="mb-1">Monday - Sunday:</span>
-                <span className="text-primary-400 font-semibold text-lg">7:00 AM - 12:00 AM</span>
-              </li>
-            </ul>
+          {/* Col 4: Timings */}
+          <div className="lg:col-span-2">
+            <h4 className="text-base font-bold mb-5 text-white uppercase tracking-wider text-xs">Working Hours</h4>
+            <div className="bg-slate-800/80 border border-slate-700/60 p-4 rounded-2xl space-y-1 text-sm">
+              <p className="text-slate-400 text-xs uppercase font-semibold">Open Daily</p>
+              <p className="text-white font-bold">Mon – Sun</p>
+              <p className="text-[#5EEAD4] font-extrabold text-sm pt-1">7:00 AM – 12:00 AM</p>
+            </div>
           </div>
+
         </div>
         
-        <div className="border-t border-gray-800 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Waqas Pharmacy. All rights reserved.</p>
-          <div className="flex gap-4 text-sm text-gray-500">
-            <span className="hover:text-primary-400 cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-primary-400 cursor-pointer">Terms of Service</span>
+        {/* Bottom Bar */}
+        <div className="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <p>&copy; {new Date().getFullYear()} Waqas Pharmacy. All rights reserved.</p>
+          <div className="flex items-center gap-1 text-slate-400">
+            <span>Providing care with</span>
+            <FaHeart className="text-red-400 text-xs mx-1" />
+            <span>in Peshawar since 2007</span>
           </div>
         </div>
       </div>

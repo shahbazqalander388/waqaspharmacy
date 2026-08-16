@@ -1,89 +1,150 @@
 import Section from '../components/common/Section';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp, FaClock, FaPaperPlane } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <Section id="contact" bg="white" title="Get In Touch" subtitle="Contact Us">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+    <Section 
+      id="contact" 
+      title="Get In Touch With Us" 
+      subtitle="Visit Or Call"
+      description="Have questions about your prescription or need medicine availability info? Reach out to our qualified team anytime."
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-16 items-start">
+        {/* Contact Info List */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
+          className="lg:col-span-5 space-y-4"
         >
-          <div className="space-y-8">
-            <div className="flex items-start">
-              <div className="bg-primary-100 p-4 rounded-full text-primary-600 mr-6 shrink-0">
-                <FaMapMarkerAlt className="text-2xl" />
+          <div className="bg-white p-6 sm:p-7 rounded-3xl border border-slate-200/80 shadow-xs space-y-6">
+            <h3 className="text-xl font-extrabold text-[#0F172A]">Pharmacy Information</h3>
+            
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#ECFEFF] text-[#0F766E] flex items-center justify-center text-xl shrink-0">
+                <FaMapMarkerAlt />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Our Location</h3>
-                <p className="text-gray-600">Dabgari Garden Chowk, Peshawar, Pakistan</p>
+                <h4 className="text-sm font-bold text-[#0F172A] uppercase tracking-wider mb-1">Location</h4>
+                <p className="text-[#64748B] text-sm leading-relaxed">
+                  Dabgari Garden Chowk, Peshawar, Khyber Pakhtunkhwa, Pakistan
+                </p>
               </div>
             </div>
             
-            <div className="flex items-start">
-              <div className="bg-primary-100 p-4 rounded-full text-primary-600 mr-6 shrink-0">
-                <FaPhoneAlt className="text-2xl" />
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#ECFEFF] text-[#0F766E] flex items-center justify-center text-lg shrink-0">
+                <FaPhoneAlt />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Phone Number</h3>
-                <a href="tel:+923349238785" className="text-gray-600 hover:text-primary-600 transition-colors">+92 334 9238785</a>
+                <h4 className="text-sm font-bold text-[#0F172A] uppercase tracking-wider mb-1">Direct Phone</h4>
+                <a 
+                  href="tel:+923349238785" 
+                  className="text-base font-semibold text-[#0F172A] hover:text-[#0F766E] transition-colors"
+                >
+                  +92 334 9238785
+                </a>
               </div>
             </div>
 
-            <div className="flex items-start">
-              <div className="bg-primary-100 p-4 rounded-full text-primary-600 mr-6 shrink-0">
-                <FaWhatsapp className="text-2xl" />
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#ECFEFF] text-[#0F766E] flex items-center justify-center text-xl shrink-0">
+                <FaWhatsapp className="text-green-600" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
-                <a href="https://wa.me/923349238785" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary-600 transition-colors">+92 334 9238785</a>
+                <h4 className="text-sm font-bold text-[#0F172A] uppercase tracking-wider mb-1">WhatsApp Helpdesk</h4>
+                <a 
+                  href="https://wa.me/923349238785" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-base font-semibold text-[#0F172A] hover:text-[#0F766E] transition-colors"
+                >
+                  +92 334 9238785
+                </a>
               </div>
             </div>
 
-            <div className="flex items-start">
-              <div className="bg-primary-100 p-4 rounded-full text-primary-600 mr-6 shrink-0">
-                <FaClock className="text-2xl" />
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#EFF6FF] text-[#2563EB] flex items-center justify-center text-xl shrink-0">
+                <FaClock />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Opening Hours</h3>
-                <p className="text-gray-600">Monday - Sunday: 7:00 AM – 12:00 AM</p>
+                <h4 className="text-sm font-bold text-[#0F172A] uppercase tracking-wider mb-1">Store Timings</h4>
+                <p className="text-sm font-semibold text-[#0F172A]">Monday – Sunday</p>
+                <p className="text-xs text-[#64748B]">7:00 AM – 12:00 AM Midnight</p>
               </div>
             </div>
           </div>
         </motion.div>
 
+        {/* Message Form */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gray-50 rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10"
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="lg:col-span-7 bg-white rounded-3xl shadow-xs border border-slate-200/80 p-7 sm:p-9"
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h2>
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-              <input type="text" id="name" className="w-full px-5 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors bg-white" placeholder="John Doe" />
+          <h3 className="text-2xl font-extrabold text-[#0F172A] mb-2">Send us a Message</h3>
+          <p className="text-[#64748B] text-sm mb-6">Leave your query and our team will get back to you promptly.</p>
+          
+          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-1.5">Your Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8] focus:bg-white focus:ring-2 focus:ring-[#0F766E]/20 focus:border-[#0F766E] outline-none transition-all text-sm" 
+                  placeholder="e.g. Ahmad Khan" 
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-1.5">Phone Number</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8] focus:bg-white focus:ring-2 focus:ring-[#0F766E]/20 focus:border-[#0F766E] outline-none transition-all text-sm" 
+                  placeholder="+92 300 1234567" 
+                />
+              </div>
             </div>
+
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-              <input type="email" id="email" className="w-full px-5 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors bg-white" placeholder="john@example.com" />
+              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-1.5">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8] focus:bg-white focus:ring-2 focus:ring-[#0F766E]/20 focus:border-[#0F766E] outline-none transition-all text-sm" 
+                placeholder="name@example.com" 
+              />
             </div>
+
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-              <textarea id="message" rows="4" className="w-full px-5 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors resize-none bg-white" placeholder="How can we help you?"></textarea>
+              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-1.5">Message or Prescription Details</label>
+              <textarea 
+                id="message" 
+                rows="4" 
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8] focus:bg-white focus:ring-2 focus:ring-[#0F766E]/20 focus:border-[#0F766E] outline-none transition-all resize-none text-sm" 
+                placeholder="Describe your medicine requirements or questions..."
+              ></textarea>
             </div>
-            <button type="submit" className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 rounded-xl transition-colors shadow-lg shadow-primary-500/30 text-lg">
-              Send Message
+
+            <button 
+              type="submit" 
+              className="w-full inline-flex items-center justify-center gap-2 bg-[#0F766E] hover:bg-[#115E59] text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-teal-900/15 text-base cursor-pointer hover:-translate-y-0.5"
+            >
+              <FaPaperPlane className="text-sm" />
+              <span>Send Message</span>
             </button>
           </form>
         </motion.div>
       </div>
 
-      <div className="h-[400px] w-full rounded-3xl overflow-hidden shadow-sm">
+      {/* Map */}
+      <div className="rounded-3xl overflow-hidden shadow-xs border border-slate-200/80 h-80 sm:h-96 w-full">
         <iframe 
           src="https://maps.google.com/maps?q=Dabgari%20Garden%20Chowk,%20Peshawar,%20Pakistan&t=&z=16&ie=UTF8&iwloc=&output=embed"
           width="100%" 
@@ -92,7 +153,7 @@ const Contact = () => {
           allowFullScreen="" 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
-          title="Waqas Pharmacy Location"
+          title="Waqas Pharmacy Dabgari Garden Peshawar Location Map"
         ></iframe>
       </div>
     </Section>

@@ -6,11 +6,12 @@ const TestimonialSlider = ({ testimonials }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (!testimonials || testimonials.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [testimonials.length]);
+  }, [testimonials]);
 
   if (!testimonials || testimonials.length === 0) return null;
 
@@ -18,42 +19,44 @@ const TestimonialSlider = ({ testimonials }) => {
 
   return (
     <div className="max-w-4xl mx-auto px-4">
-      <div className="relative min-h-[350px] flex items-center justify-center">
+      <div className="relative min-h-[320px] flex items-center justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.5 }}
-            className="bg-white rounded-3xl p-8 md:p-14 shadow-xl border border-primary-50 text-center relative w-full"
+            transition={{ duration: 0.4 }}
+            className="bg-white rounded-3xl p-8 sm:p-12 shadow-md border border-slate-100 text-center relative w-full"
           >
-            <FaQuoteLeft className="text-5xl md:text-7xl text-primary-100 absolute top-6 left-6 md:top-10 md:left-10 z-0" />
+            <FaQuoteLeft className="text-4xl sm:text-6xl text-[#ECFEFF] absolute top-6 left-6 sm:top-8 sm:left-8 z-0" />
             
-            <div className="flex justify-center mb-8 relative z-10">
+            <div className="flex justify-center mb-6 relative z-10">
               {[...Array(5)].map((_, i) => (
-                <FaStar key={i} className="text-yellow-400 text-2xl mx-1 drop-shadow-sm" />
+                <FaStar key={i} className="text-amber-400 text-xl mx-0.5" />
               ))}
             </div>
             
-            <p className="text-xl md:text-3xl text-gray-800 italic mb-10 relative z-10 font-light leading-relaxed">
+            <p className="text-lg sm:text-2xl text-[#0F172A] italic mb-8 relative z-10 font-normal leading-relaxed">
               "{current.text}"
             </p>
             
             <div className="relative z-10">
-              <h4 className="font-bold text-gray-900 text-xl md:text-2xl mb-1">{current.name}</h4>
-              <p className="text-primary-600 font-medium uppercase tracking-wide text-sm">{current.role}</p>
+              <h4 className="font-bold text-[#0F172A] text-lg sm:text-xl">{current.name}</h4>
+              <p className="text-[#0F766E] font-semibold text-xs uppercase tracking-wider mt-0.5">{current.role}</p>
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
       
-      <div className="flex justify-center mt-10 gap-3">
+      <div className="flex justify-center mt-8 gap-2.5">
         {testimonials.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
-            className={`h-3 rounded-full transition-all duration-300 ${currentIndex === idx ? 'bg-primary-600 w-10' : 'bg-gray-300 w-3 hover:bg-primary-400'}`}
+            className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+              currentIndex === idx ? 'bg-[#0F766E] w-8' : 'bg-slate-300 w-2.5 hover:bg-slate-400'
+            }`}
             aria-label={`Go to testimonial ${idx + 1}`}
           />
         ))}

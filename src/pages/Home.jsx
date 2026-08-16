@@ -1,17 +1,23 @@
 import { motion } from 'framer-motion';
-import Section from '../components/common/Section';
+import { FaPhoneAlt, FaWhatsapp, FaShieldAlt, FaUserMd, FaClock, FaCheckCircle } from 'react-icons/fa';
 import AnimatedCounter from '../components/common/AnimatedCounter';
 
 const Home = () => {
   const stats = [
-    { value: 16, label: 'Years Experience', suffix: '+' },
-    { value: 50, label: 'Happy Customers', suffix: 'k+' },
-    { value: 8, label: 'Categories' },
-    { value: 99, label: 'Satisfaction', suffix: '%' },
+    { value: 16, label: 'Years of Experience', suffix: '+' },
+    { value: 50, label: 'Satisfied Customers', suffix: 'k+' },
+    { value: 8, label: 'Product Categories' },
+    { value: 99, label: 'Satisfaction Rate', suffix: '%' },
   ];
 
+  const highlights = [
+    { icon: <FaShieldAlt className="text-[#0F766E]" />, text: "100% Genuine Medicines" },
+    { icon: <FaUserMd className="text-[#2563EB]" />, text: "Licensed Pharmacists" },
+    { icon: <FaClock className="text-[#0F766E]" />, text: "Open 7:00 AM - 12:00 AM" },
+  ];
 
   const handleScroll = (id) => {
+    window.history.pushState(null, '', `#${id}`);
     const element = document.getElementById(id);
     if (element) {
       const headerOffset = 80;
@@ -22,49 +28,149 @@ const Home = () => {
   };
 
   return (
-    <div id="home">
+    <div id="home" className="pt-24 lg:pt-32 pb-12">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
+      <section className="relative overflow-hidden mb-12 lg:mb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            
+            {/* Left Column: Headline & Action */}
+            <motion.div 
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="lg:col-span-7 space-y-6 text-left"
             >
-              <span className="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-6 tracking-wide uppercase">
-                Established 2007
-              </span>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
-                Your Trusted <span className="text-green-400">Healthcare</span> Partner
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ECFEFF] text-[#0F766E] border border-teal-200/80 font-bold text-xs tracking-wider uppercase">
+                <span className="w-2 h-2 rounded-full bg-[#0F766E] animate-ping inline-block"></span>
+                <span>Established 2007 • Dabgari Garden, Peshawar</span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] leading-tight tracking-tight">
+                Your Trusted <span className="text-[#0F766E]">Healthcare</span> & Pharmacy Partner
               </h1>
-              <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-lg">
-                Providing genuine medicines, professional advice, and comprehensive healthcare solutions for you and your family.
+
+              <p className="text-lg sm:text-xl text-[#64748B] leading-relaxed max-w-2xl">
+                Providing genuine prescription medicines, trusted healthcare advice, and premium wellness essentials with over 16 years of clinical excellence in Peshawar.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+923349238785" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors flex items-center justify-center shadow-lg shadow-primary-500/30">
-                  Call Now
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-4 pt-2">
+                <a 
+                  href="tel:+923349238785" 
+                  className="inline-flex items-center justify-center gap-2.5 bg-[#0F766E] hover:bg-[#115E59] text-white px-7 py-4 rounded-xl font-bold text-base shadow-md shadow-teal-900/15 transition-all duration-200 hover:-translate-y-0.5"
+                >
+                  <FaPhoneAlt className="text-sm" />
+                  <span>Call Now</span>
                 </a>
-                <button onClick={() => handleScroll('about')} className="bg-white border-2 border-gray-200 hover:border-primary-600 hover:text-primary-600 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg transition-colors flex items-center justify-center">
-                  Learn More
+
+                <a 
+                  href="https://wa.me/923349238785" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-slate-50 text-[#0F172A] border border-slate-200 hover:border-[#2563EB] hover:text-[#2563EB] px-7 py-4 rounded-xl font-bold text-base shadow-xs transition-all duration-200"
+                >
+                  <FaWhatsapp className="text-lg text-green-600" />
+                  <span>WhatsApp Order</span>
+                </a>
+
+                <button 
+                  onClick={() => handleScroll('about')} 
+                  className="inline-flex items-center justify-center px-6 py-4 rounded-xl text-[#64748B] hover:text-[#0F766E] font-semibold text-base transition-colors"
+                >
+                  Learn More →
                 </button>
               </div>
+
+              {/* Highlights Pill Badges */}
+              <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 border-t border-slate-200/80">
+                {highlights.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-2.5 py-1 text-sm font-semibold text-[#0F172A]">
+                    <div className="w-7 h-7 rounded-lg bg-[#ECFEFF] flex items-center justify-center shrink-0">
+                      {item.icon}
+                    </div>
+                    <span>{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </motion.div>
+
+            {/* Right Column: Hero Visual Card */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="relative mx-auto max-w-md lg:max-w-none">
+                {/* Decorative background glow */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/10 to-blue-500/10 rounded-3xl filter blur-2xl transform -rotate-2"></div>
+                
+                {/* Main Hero Card */}
+                <div className="relative bg-white rounded-3xl border border-slate-200/80 p-4 sm:p-5 shadow-xl">
+                  <div className="rounded-2xl overflow-hidden relative aspect-[4/3] bg-slate-100 mb-4">
+                    <img 
+                      src="https://images.unsplash.com/photo-1586015554060-8db6631248a1?auto=format&fit=crop&q=80&w=800" 
+                      alt="Modern Pharmacy & Genuine Medicine Dispensing" 
+                      className="w-full h-full object-cover object-center"
+                      onError={(e) => { e.target.onerror = null; e.target.src = "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"; }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/70 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <p className="text-xs uppercase tracking-widest text-[#ECFEFF] font-bold">Waqas Pharmacy</p>
+                      <p className="text-lg font-bold">Dabgari Garden Chowk, Peshawar</p>
+                    </div>
+                  </div>
+
+                  {/* Quick Feature Badges Inside Card */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-3.5 rounded-xl bg-[#ECFEFF] border border-teal-100 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[#0F766E] text-white flex items-center justify-center shrink-0">
+                        <FaCheckCircle className="text-lg" />
+                      </div>
+                      <div>
+                        <div className="text-xs text-[#64748B] font-medium">Authenticity</div>
+                        <div className="text-sm font-bold text-[#0F172A]">100% Genuine</div>
+                      </div>
+                    </div>
+
+                    <div className="p-3.5 rounded-xl bg-[#EFF6FF] border border-blue-100 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[#2563EB] text-white flex items-center justify-center shrink-0">
+                        <FaClock className="text-lg" />
+                      </div>
+                      <div>
+                        <div className="text-xs text-[#64748B] font-medium">Daily Timings</div>
+                        <div className="text-sm font-bold text-[#0F172A]">7 AM - 12 AM</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Experience Badge */}
+                <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white p-3.5 sm:p-4 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-[#0F766E] text-white font-extrabold flex items-center justify-center text-lg shadow-sm">
+                    16+
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold text-[#64748B] uppercase tracking-wider">Trusted</div>
+                    <div className="text-sm font-extrabold text-[#0F172A]">Years of Service</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <Section bg="primary">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Stats Counter Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {stats.map((stat, index) => (
             <AnimatedCounter key={index} {...stat} />
           ))}
         </div>
-      </Section>
-
+      </section>
     </div>
   );
 };

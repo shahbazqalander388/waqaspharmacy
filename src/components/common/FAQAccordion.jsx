@@ -17,18 +17,28 @@ const FAQAccordion = ({ faqs }) => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: index * 0.1 }}
-          className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all"
+          transition={{ delay: index * 0.08, duration: 0.4 }}
+          className={`border rounded-2xl overflow-hidden bg-white transition-all duration-200 ${
+            activeIndex === index 
+              ? 'border-teal-200 shadow-md ring-2 ring-teal-500/10' 
+              : 'border-slate-200/80 shadow-xs hover:border-slate-300'
+          }`}
         >
           <button
-            className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
+            className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none cursor-pointer group"
             onClick={() => toggleAccordion(index)}
             aria-expanded={activeIndex === index}
           >
-            <span className="text-lg md:text-xl font-semibold text-gray-900 pr-8">{faq.question}</span>
-            <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 ${activeIndex === index ? 'bg-primary-100' : 'bg-gray-100'}`}>
+            <span className={`text-base sm:text-lg font-bold pr-4 transition-colors ${
+              activeIndex === index ? 'text-[#0F766E]' : 'text-[#0F172A] group-hover:text-[#0F766E]'
+            }`}>
+              {faq.question}
+            </span>
+            <div className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
+              activeIndex === index ? 'bg-[#0F766E] text-white' : 'bg-[#ECFEFF] text-[#0F766E]'
+            }`}>
               <FaChevronDown 
-                className={`text-primary-600 transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`} 
+                className={`text-xs transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`} 
               />
             </div>
           </button>
@@ -39,9 +49,9 @@ const FAQAccordion = ({ faqs }) => {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.25 }}
               >
-                <div className="px-6 md:px-8 pb-6 md:pb-8 text-gray-600 leading-relaxed text-lg">
+                <div className="px-5 sm:px-6 pb-6 pt-2 text-[#64748B] leading-relaxed text-sm sm:text-base border-t border-slate-100 bg-[#F8FAFC]/50">
                   {faq.answer}
                 </div>
               </motion.div>

@@ -4,8 +4,8 @@
   "description": "Trusted Healthcare Since 2007",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#16a34a",
+  "background_color": "#F8FAFC",
+  "theme_color": "#0F766E",
   "icons": [
     {
       "src": "/favicon.ico",
